@@ -4,6 +4,8 @@ package com.example.demo.entity;
     import lombok.AllArgsConstructor;
     import lombok.Data;
 
+    import java.util.List;
+
 @AllArgsConstructor
 @Data
 @Entity(name = "Usuarios")
@@ -21,4 +23,7 @@ public class Usuario{
     private String email;
     private float height;
     private int age;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Ticket> listOfTickets;
 }

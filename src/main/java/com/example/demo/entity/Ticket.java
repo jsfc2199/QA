@@ -3,29 +3,26 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
-@Entity(name = "Employee")
-@Table(name = "employee")
-public class Employee{
+@Entity(name = "Ticket")
+@Table(name = "ticket")
+public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String role;
-    private String name;
-    private String identification;
-    private String phone;
-    private String email;
-    private float height;
-    private int age;
+
+    private String type;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Usuario user;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Station station;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Ride ride;
+
 }
