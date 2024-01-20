@@ -17,7 +17,7 @@ public class StationController {
     private StationService service;
 
     @PostMapping("create/station")
-    public Station createUser(@RequestBody Station station) throws Exception {
+    public Station createEmployee(@RequestBody Station station) {
         return service.createStation(station);
     }
 }

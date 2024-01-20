@@ -6,26 +6,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @Entity(name = "Employee")
 @Table(name = "employee")
-public class Employee{
-
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String role;
+
     private String name;
     private String identification;
     private String phone;
     private String email;
-    private float height;
+    private String role;
     private int age;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Station station;
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Ride ride;
 }

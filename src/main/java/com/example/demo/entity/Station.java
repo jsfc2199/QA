@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @Entity(name = "Station")
 @Table(name = "station")
 public class Station {
@@ -20,13 +18,4 @@ public class Station {
     private String YNOpen;
 
     private Long employeeId;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Ticket> listOfTickets;
-
-    public Station addTicket(Ticket ticket){
-        this.listOfTickets.add(ticket);
-        return this;
-    }
-
 }

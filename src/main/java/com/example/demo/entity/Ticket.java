@@ -20,8 +20,8 @@ public class Ticket {
 
     private Long userId;
 
-    private Long stationId;
-
-    private Long rideId;
+//    private Long stationId;
+//
+//    private Long rideId;
 
 }
