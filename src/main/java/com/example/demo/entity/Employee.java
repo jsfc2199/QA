@@ -24,4 +24,7 @@ public class Employee {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Station station;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Ride ride;
 }
