@@ -39,7 +39,7 @@ public class RideService {
         Usuario usuario = usuariosRepository.findById(ticketId).get();
         Ride ride = rideRepository.findById(rideId).get();
 
-        return ride.getMinHeight() < usuario.getHeight();
+        return ride.getYnopen().equals("S") && ride.getMinHeight() < usuario.getHeight();
     }
 
 
