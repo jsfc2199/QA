@@ -3,8 +3,10 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity(name = "Ticket")
 @Table(name = "ticket")
@@ -16,13 +18,10 @@ public class Ticket {
 
     private String type;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario user;
+    private Long userId;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Station station;
+    private Long stationId;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Ride ride;
+    private Long rideId;
 
 }
